@@ -1,0 +1,48 @@
+<head>
+
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=5">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title></title>
+</head>
+
+<body style="background-color:    #e3e1e7">
+
+  <nav>
+<div class="alert alert-success" role="alert">  #Hello World | <a href="/greet/greeted">next page</a></div>
+</nav>
+  <!-- <div class="alert alert-success" role="alert">Hello World!
+  <div class="link"><a href="/greet/greeted">next page</a></div></div> -->
+
+  <br>
+
+  <div class="textbox">
+  <div class="head"><h1>Greet Application</h1></div>
+  <form action="/greet" method="post">
+
+    <br>
+    <br>
+    <br>
+    <div class="button">Name:
+      <input type="text" placeholder="name" size="30"  name="name" value=""></input>
+      <button type="submit" class="btn-danger">Greet</button>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="lang">
+    <input type="radio" name="language" value="Xhosa">IsiXhosa
+    <input type="radio" name="language" value="english">English
+    <input type="radio" name="language" value="french">French
+  </div>
+
+  </form>
+  <br>
+  <p style="margin-left:150px">{{greetMsg}}</p>
+</body>
+</div>
+<div class="last"></div>
+<div class="hello"><h1>Hello World!</h1></div>

@@ -1,0 +1,42 @@
+
+.textbox{
+padding-left: 356px;
+
+}
+h1{
+font-size: 75px;
+padding-right: 10px;
+
+}
+.head{
+background-color: #f4511e;
+border:solid #f4511e 2px;
+border-radius: -1px;
+width: 415px;
+text-align: center;
+color: white;
+margin-left: 75px;
+}
+
+.button{
+margin-left: 95px;
+
+}
+.lang{
+  margin-left: 140px;
+}
+
+.navbar{
+  color: white;
+  text-align: center;
+
+}
+.last{
+background-color: red;
+border:solid #f4511e 3px;
+}
+.hello{
+text-align: center;
+color:#f4511e;
+
+}

@@ -1,0 +1,25 @@
+<head>
+  <meta charset="utf-8">
+  <title>HI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-height, initial-scale=5">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <nav>
+<div class="alert alert-success" role="alert">  #Hello World | <a href="/greet">previous page</a></div>
+</nav>
+  <br>
+  <br>
+  <h4>List of Names </h4>
+  <hr>
+
+<div class="myList"><ul>
+{{#each greet}}
+<li> {{this}} </li>
+{{/each}}
+</ul>
+</div>
+</body>
