@@ -8,10 +8,9 @@
     "start": "node index.js"
   },
   "keywords": [
-    "example",
     "heroku"
   ],
-  "author": "",
+  "author": "mbulelo",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -21,5 +20,14 @@
     "express-session": "^1.15.3",
     "heroku": "^0.2.0",
     "pug": "^2.0.0-rc.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mshav/greeting-web-application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mshav/greeting-web-application/issues"
+  },
+  "homepage": "https://github.com/mshav/greeting-web-application#readme"
 }

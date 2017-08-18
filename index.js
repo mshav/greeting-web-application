@@ -26,7 +26,10 @@ app.use(session({
   }
 }));
 
+app.get("/", function(req, res){
+res.redirect("/greet")
 
+})
 
 app.get('/greet', function(req, res) {
   res.render('home')
