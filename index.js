@@ -1,13 +1,14 @@
 const express = require('express');
-var app = express();
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const NameRoutes = require('./greets');
+const Models = require('./models');
+const models = Models(process.env.MONGO_DB_URL || 'mongodb://localhost/greetings');
+const nameRoutes = NameRoutes(models);
 
-const namesGreeted = [];
-const counterMap ={};
-var counter = 0;
 
+var app = express();
 app.use(express.static('public'))
 
 app.engine('handlebars', exphbs({
@@ -26,61 +27,26 @@ app.use(session({
   }
 }));
 
+app.get("/", function(req, res) {
+  res.redirect("/home")
+
+})
+
 app.get("/", function(req, res){
-res.redirect("/greet")
 
+  res.rediect("/greeted")
 })
 
-app.get('/greet', function(req, res) {
-  res.render('home')
-})
-
-app.post("/greet", function(req, res) {
-  var name = req.body.name;
-  var language = req.body.language;
-  console.log(name);
-
-  if (language == 'Xhosa') {
-    var greetMsg = "Molo " + name; //"Hello " + name;
-    counter++
-  }
-
-  if (language == 'english') {
-
-    var greetMsg = "Hello " + name; //"Hello " + name;
-    counter++
-  }
 
 
 
-  if (language == 'french') {
-    var greetMsg = "Bonjour " + name; //"Hello " + name;
-    counter++;
-  }
+app.get("/home", nameRoutes.home);
+app.post('/home', nameRoutes.home);
 
-if(counterMap[name] === undefined){
-  counterMap[name] = 0;
-  counter ++;
-}
-const greetedCounter = counterMap[name];
-namesGreeted.push(name);
-console.log(namesGreeted)
+  app.get("/greeted", nameRoutes.greeted);
+ app.post('/greeted', nameRoutes.greeted);
 
-  var data = {
-    greetMsg: greetMsg
-  }
-  res.render("home", data)
-})
-
-// console.log(data);
-app.get('/greet/greeted', function(req, res) {
-var name = req.body.name;
-
-  res.render("greet", {greet: namesGreeted});
-});
-
-
-
+var namesGreeted = [];
 var server = app.listen(3000, function() {
 
   var host = server.address().address;

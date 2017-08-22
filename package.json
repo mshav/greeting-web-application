@@ -19,6 +19,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.3",
     "heroku": "^0.2.0",
+    "mongoose": "^4.11.7",
     "pug": "^2.0.0-rc.3"
   },
   "devDependencies": {},

@@ -11,7 +11,7 @@
 <body style="background-color:    #e3e1e7">
 
   <nav>
-<div class="alert alert-success" role="alert">  #Hello World | <a href="/greet/greeted">next page</a></div>
+<div class="alert alert-success" role="alert">  #Hello World | <a href="/greeted/">next page</a></div>
 </nav>
   <!-- <div class="alert alert-success" role="alert">Hello World!
   <div class="link"><a href="/greet/greeted">next page</a></div></div> -->
@@ -20,13 +20,13 @@
 
   <div class="textbox">
   <div class="head"><h1>Greet Application</h1></div>
-  <form action="/greet" method="post">
+  <form action="/home" method="post">
 
     <br>
     <br>
     <br>
     <div class="button">Name:
-      <input type="text" placeholder="name" size="30"  name="name" value=""></input>
+      <input type="text" placeholder="Type name here" size="30"  name="name" value=""></input>
       <button type="submit" class="btn-danger">Greet</button>
     </div>
     <br>
@@ -35,14 +35,21 @@
 
     <div class="lang">
     <input type="radio" name="language" value="Xhosa">IsiXhosa
-    <input type="radio" name="language" value="english">English
-    <input type="radio" name="language" value="french">French
+    <input type="radio" name="language" value="English">English
+    <input type="radio" name="language" value="French">French
   </div>
+  <br>
+  <br>
+  <br>
+  <p style="margin-left:150px">{{msg}}</p>
+  <!-- <p style="margin-left:150px">{{name}}</p> -->
 
   </form>
   <br>
-  <p style="margin-left:150px">{{greetMsg}}</p>
+
 </body>
 </div>
 <div class="last"></div>
+<br>
+<br>
 <div class="hello"><h1>Hello World!</h1></div>
