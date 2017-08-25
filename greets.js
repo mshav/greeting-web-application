@@ -1,6 +1,4 @@
 module.exports = function(models) {
-
-  
   const namesGreeted = [];
   const home = function(req, res, done) {
     var name = req.body.name;
@@ -36,6 +34,7 @@ module.exports = function(models) {
         if (language == "French") {
           greetMsg = "Bonjuor" + " " + result.name;
         }
+        namesGreeted.push(name)
 
         console.log(greetMsg);
         res.render('home', {
@@ -77,10 +76,6 @@ module.exports = function(models) {
               msg: greetMsg
             });
 
-            res.render("greeted", {
-              greet: greet
-
-            })
           });
 
 
@@ -94,8 +89,21 @@ module.exports = function(models) {
 
   }
 
-  const greeted = function(req, res, done) {
-    res.render('greeted');
+
+
+  const greeted = function(req, res, next) {
+    models.Name.find({}, function(err,results){
+      if(err){
+        return next()
+      }else {
+
+        res.render("greeted", {
+          greet: results
+
+        })
+      }
+    })
+
   }
 
   return {

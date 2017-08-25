@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+// const models = Models(process.env.MONGO_DB_URL || 'mongodb://localhost/greetings');
+
 module.exports = function(mongoUrl){
     mongoose.Promise = global.Promise;
     mongoose.connect(mongoUrl);
@@ -11,5 +13,4 @@ module.exports = function(mongoUrl){
     return {
         Name
     };
-
-};
+}

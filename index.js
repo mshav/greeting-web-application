@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const NameRoutes = require('./greets');
 const Models = require('./models');
-const models = Models(process.env.MONGO_DB_URL || 'mongodb://localhost/greetings');
+const mongoUrl = process.env.MONGO_DB_URL || 'mongodb://localhost/greetings';
+const models = Models(mongoUrl);
 const nameRoutes = NameRoutes(models);
 
 
@@ -27,15 +28,15 @@ app.use(session({
   }
 }));
 
-app.get("/", function(req, res) {
-  res.redirect("/home")
-
-})
-
-app.get("/", function(req, res){
-
-  res.rediect("/greeted")
-})
+// app.get("/", function(req, res) {
+//   res.redirect("/home")
+//
+// })
+//
+// app.get("/", function(req, res){
+//
+//   res.rediect("/greeted")
+// })
 
 
 
@@ -44,7 +45,7 @@ app.get("/home", nameRoutes.home);
 app.post('/home', nameRoutes.home);
 
   app.get("/greeted", nameRoutes.greeted);
- app.post('/greeted', nameRoutes.greeted);
+ // app.post('/greeted', nameRoutes.greeted);
 
 var namesGreeted = [];
 var server = app.listen(3000, function() {
