@@ -23,16 +23,22 @@ module.exports = function(models) {
 
         console.log('language', language);
         //greet
+        if(language == ""){
+          greetMsg = "please select a language";
+        }
         if (language == "Xhosa") {
-          greetMsg = "Molo " + " " + result.name;
+          greetMsg = "Molo " + " " + result.name !== "please select a language";
 
         }
 
         if (language == "English") {
-          greetMsg = "Hello " + " " + result.name;
+          greetMsg = "Hello " + " " + result.name !== "please select a language";
         }
         if (language == "French") {
-          greetMsg = "Bonjuor" + " " + result.name;
+          greetMsg = "Bonjuor" + " " + result.name !== "please select a language";
+        }
+        if(name == ""){
+          greetMsg ="please enter a name ";
         }
         namesGreeted.push(name)
 
@@ -50,14 +56,14 @@ module.exports = function(models) {
           if (err) {
             return done(err)
           }
-          ///////////////////
+
           models.Name.findOne({
             name: req.body.name
           }, function(err, result) {
             if (err) {
               return done(err)
             }
-            // namesGreeted.push(name);
+
 
             console.log('First', result);
             if (language == "Xhosa") {
@@ -71,6 +77,7 @@ module.exports = function(models) {
               greetMsg = "bonquor" + " " + result.name;
             }
 
+            console.log(language);
             console.log(greetMsg);
             res.render('home', {
               msg: greetMsg
@@ -98,7 +105,7 @@ module.exports = function(models) {
       }else {
 
         res.render("greeted", {
-          greet: results
+          names: results
 
         })
       }
