@@ -6,4 +6,10 @@ describe("models should be able to",function(){
           var models = ("mongodb://localhost/greetings")
 
   });
+
+  // it("should not allow duplicate names",function(){
+
+
+
+  })
 })
