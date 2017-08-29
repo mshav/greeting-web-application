@@ -22,25 +22,44 @@ module.exports = function(models) {
         })
 
         console.log('language', language);
-        //greet
-        if(language == ""){
-          greetMsg = "please select a language";
-        }
-        if (language == "Xhosa") {
-          greetMsg = "Molo " + " " + result.name !== "please select a language";
 
+
+        if (language == "Xhosa") {
+          greetMsg = "Molo " + " " + result.name;
+
+        }
+        else{
+          greetMsg ="please enter a name !";
+        }
+
+         if(language == undefined){
+
+          greetMsg = " ";
         }
 
         if (language == "English") {
-          greetMsg = "Hello " + " " + result.name !== "please select a language";
+          greetMsg = "Hello " + " " + result.name;
         }
+        else{
+          greetMsg ="please enter a name !";
+        }
+
+
+       if(language == undefined){
+
+          greetMsg = " ";
+        }
+
         if (language == "French") {
-          greetMsg = "Bonjuor" + " " + result.name !== "please select a language";
+          greetMsg = "Bonjuor" + " " + result.name.Lowercase();
         }
-        if(name == ""){
-          greetMsg ="please enter a name ";
+        else{
+          greetMsg ="please enter a name !";
         }
-        namesGreeted.push(name)
+         if (language == undefined) {
+          greetMsg =" ";
+        }
+
 
         console.log(greetMsg);
         res.render('home', {
@@ -77,8 +96,6 @@ module.exports = function(models) {
               greetMsg = "bonquor" + " " + result.name;
             }
 
-            console.log(language);
-            console.log(greetMsg);
             res.render('home', {
               msg: greetMsg
             });
