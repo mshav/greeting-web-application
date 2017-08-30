@@ -1,15 +1,16 @@
 module.exports = function(models) {
   const namesGreeted = [];
   const home = function(req, res, done) {
-    var name = req.body.name;
     var language = req.body.language;
     var greetMsg = '';
     models.Name.findOne({
       name: req.body.name
+
     }, function(err, result) {
       if (err) {
         return done(err)
       }
+
       if (result) {
         //increment
         result.counter = result.counter + 1;
@@ -21,43 +22,17 @@ module.exports = function(models) {
 
         })
 
-        console.log('language', language);
-
-
         if (language == "Xhosa") {
           greetMsg = "Molo " + " " + result.name;
 
-        }
-        else{
-          greetMsg ="please enter a name !";
-        }
-
-         if(language == undefined){
-
-          greetMsg = " ";
         }
 
         if (language == "English") {
           greetMsg = "Hello " + " " + result.name;
         }
-        else{
-          greetMsg ="please enter a name !";
-        }
-
-
-       if(language == undefined){
-
-          greetMsg = " ";
-        }
 
         if (language == "French") {
-          greetMsg = "Bonjuor" + " " + result.name.Lowercase();
-        }
-        else{
-          greetMsg ="please enter a name !";
-        }
-         if (language == undefined) {
-          greetMsg =" ";
+          greetMsg = "Bonjuor" + " " + result.name;
         }
 
 
@@ -130,9 +105,22 @@ module.exports = function(models) {
 
   }
 
+  const work = function(req, res, next){
+  if(err){
+   return next()
+ }else{
+
+   res.render("work", {
+     names: results
+   })
+ }
+
+  }
+
   return {
     home,
-    greeted
+    greeted,
+    work
   }
 
 }

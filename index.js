@@ -28,24 +28,25 @@ app.use(session({
   }
 }));
 
-// app.get("/", function(req, res) {
-//   res.redirect("/home")
-//
-// })
-//
-// app.get("/", function(req, res){
-//
-//   res.rediect("/greeted")
-// })
+
+ app.get("/", function(req, res) {
+   res.redirect("/home")
+
+ })
+
+ app.get("/", function(req, res){
+
+   res.redirect("/greeted")
+})
 
 
 
 
 app.get("/home", nameRoutes.home);
-app.post('/home', nameRoutes.home);
+app.post('/work', nameRoutes.home);
 
   app.get("/greeted", nameRoutes.greeted);
- app.post('/greeted', nameRoutes.greeted);
+ app.post('/username', nameRoutes.greeted);
 
 var namesGreeted = [];
 var server = app.listen(3000, function() {

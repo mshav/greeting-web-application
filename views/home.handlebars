@@ -20,13 +20,13 @@
 
   <div class="textbox">
   <div class="head"><h1>Greet Application</h1></div>
-  <form action="/home" method="post">
+  <form action="/work" method="post">
 
     <br>
     <br>
     <br>
     <div class="button">Name:
-      <input type="text" placeholder="Type name here" size="30"  name="name" value=""></input>
+      <input type="text" placeholder="Type name here" size="30"  name="name" value="" required=""></input>
       <button type="submit" class="btn-danger">Greet</button>
     </div>
     <br>
@@ -34,15 +34,15 @@
     <br>
 
     <div class="lang">
-    <input type="radio" name="language" value="Xhosa" checked="language">IsiXhosa
-    <input type="radio" name="language" value="English" checked="language">English
-    <input type="radio" name="language" value="French" checked="language">French
+    <input type="radio" name="language" value="Xhosa" >IsiXhosa
+    <input type="radio" name="language" value="English">English
+    <input type="radio" name="language" value="French">French
   </div>
   <br>
   <br>
   <br>
   <p style="margin-left:150px">{{msg}}</p>
-  <!-- <p style="margin-left:150px">{{name}}</p> -->
+
 
   </form>
   <br>
