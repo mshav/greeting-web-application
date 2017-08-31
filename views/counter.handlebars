@@ -7,21 +7,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:red">
   <nav>
-<div class="alert alert-success" role="alert">  #Hello World | <a href="/home">previous page</a>|<a href="counter/:name">last page</a></div>
+<div class="alert alert-success" role="alert">  #Hello World | <a href="/home">previous page</a></div>
 </nav>
   <br>
   <br>
-  <h4 style="margin-left:25px">List of Names </h4>
+
   <hr>
-
-<div class="myList">
-<ul>
-  {{#each names}}
-   <a href="/counter/{{this.name}}"><p>{{this.name}}</p></a>
-  {{/each}}
-
-</ul>
-</div>
+     <!-- { _id: 59a7ef605aedd93c0bf195fc, name: 'jad', counter: 1, __v: 0 } -->
+  <p align="center">{{counting.name}} has been greeted {{counting.counter}} times</p>
 </body>

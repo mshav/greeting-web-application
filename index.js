@@ -43,10 +43,13 @@ app.use(session({
 
 
 app.get("/home", nameRoutes.home);
-app.post('/work', nameRoutes.home);
+app.post('/home', nameRoutes.home);
 
   app.get("/greeted", nameRoutes.greeted);
  app.post('/username', nameRoutes.greeted);
+
+ app.get("/counter/:name" , nameRoutes.counter);
+app.post("/counter/:name", nameRoutes.counter);
 
 var namesGreeted = [];
 var server = app.listen(3000, function() {
