@@ -7,21 +7,26 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:#009933">
   <nav>
-<div class="alert alert-success" role="alert">  #Hello World | <a href="/home">previous page</a>|<a href="counter/:name">last page</a></div>
-</nav>
+    <div class="alert alert-success" role="alert"> #Hello World | <a href="/home">previous page</a></div>
+  </nav>
   <br>
   <br>
-  <h4 style="margin-left:25px">List of Names </h4>
+  <h4 style="color:white" margin-right:"45px" >List of Names </h4>
   <hr>
 
-<div class="myList">
-<ul>
-  {{#each names}}
-   <a href="/counter/{{this.name}}"><p>{{this.name}}</p></a>
-  {{/each}}
+  <div class="myList">
+    <ul>
+      {{#each names}}
+        <a href="/counter/{{this.name}}">
+          <p style="color:white">{{this.name}}</p>
+        </a>
+      {{/each}}
 
-</ul>
-</div>
+    </ul>
+  </div>
+  <form action="/clear" method="post">
+    <button type="submit" class="btn-danger" style="margin-left:40px">clear</button>
+  </form>
 </body>

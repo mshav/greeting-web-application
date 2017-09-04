@@ -20,10 +20,12 @@ margin-left: 75px;
 
 .button{
 margin-left: 95px;
+color:#f4511e;
 
 }
 .lang{
   margin-left: 140px;
+  color:white;
 }
 
 .navbar{
@@ -37,10 +39,14 @@ border:solid #f4511e 3px;
 }
 .hello{
 margin-left:515px;
-color:#f4511e;
-opacity: 0.3;
+color:white;
+opacity: 0.1;
 }
 li{
   list-style:none;
   color:red;
+}
+.msg{
+
+  color:white;
 }

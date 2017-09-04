@@ -51,6 +51,9 @@ app.post('/home', nameRoutes.home);
  app.get("/counter/:name" , nameRoutes.counter);
 app.post("/counter/:name", nameRoutes.counter);
 
+app.post("/clear", nameRoutes.clear);
+app.post("/clear", nameRoutes.clear);
+
 var namesGreeted = [];
 var server = app.listen(3000, function() {
 

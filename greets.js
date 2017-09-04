@@ -22,17 +22,16 @@ module.exports = function(models) {
         })
 
 
-
         if (language == "Xhosa") {
-          greetMsg = "Molo " + " " + result.name;
+          greetMsg = "Molo " + " " + result.name.replace().toLowerCase();
 
         }
 
         if (language == "English") {
-          greetMsg = "Hello " + " " + result.name;
+          greetMsg = "Hello " + " " + result.name.replace().toLowerCase();
         }
         if (language == "French") {
-          greetMsg = "Bonjuor" + " " + result.name;
+          greetMsg = "Bonjuor" + " " + result.name.replace().toLowerCase();
         }
         namesGreeted.push(name)
 
@@ -61,70 +60,70 @@ module.exports = function(models) {
 
             console.log('First', result);
             if (language == "Xhosa") {
-              greetMsg = "molo " + " " + result.name;
+              greetMsg = "molo " + " " + result.name.replace().toLowerCase();
             }
 
 
             if (language == "English") {
-              greetMsg = "hello " + " " + result.name;
+              greetMsg = "hello " + " " + result.name.replace().toLowerCase();
             }
 
             if (language == "French") {
-              greetMsg = "bonquor" + " " + result.name;
+              greetMsg = "bonquor" + " " + result.name.replace().toLowerCase();
             }
-
 
             console.log(greetMsg);
             res.render('home', {
               msg: greetMsg,
               counter: greetMsg
             });
-
           });
-
-
-
         })
-
-
       }
 
     })
-
   }
 
-  const counter = function (req, res, next) {
-
+  const counter = function(req, res, next) {
     models.Name.findOne({
-      name:req.params.name
-    }, function (err, results) {
-      if(err){
+      name: req.params.name
+    }, function(err, results) {
+      if (err) {
         return next(err)
       }
 
-      res.render('counter', {counting:results})
+      res.render('counter', {
+        counting: results
+      })
     })
-
-
   }
-
-
 
   const greeted = function(req, res, next) {
-    models.Name.find({}, function(err,results){
-      if(err){
+    models.Name.find({}, function(err, results) {
+      if (err) {
         return next(err)
       }
-      res.render("greeted", {names: results})
-
+      res.render("greeted", {
+        names: results
+      })
     })
+  }
 
+  const clear = function(req, res, next) {
+    models.Name.remove({},
+      function(err) {
+        if (err) {
+          return next(err)
+        }
+        res.render("greeted")
+      })
   }
 
   return {
     home,
     greeted,
-    counter
+    counter,
+    clear
   }
 
 }

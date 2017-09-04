@@ -8,48 +8,50 @@
   <title></title>
 </head>
 
-<body style="background-color:    #e3e1e7">
+<body style="background-color:#666633">
 
   <nav>
-<div class="alert alert-success" role="alert">  #Hello World | <a href="/greeted/">next page</a></div>
-</nav>
-  <!-- <div class="alert alert-success" role="alert">Hello World!
-  <div class="link"><a href="/greet/greeted">next page</a></div></div> -->
+    <div class="alert alert-success" role="alert"> #Hello World | <a href="/greeted/">next page</a></div>
+  </nav>
 
   <br>
 
   <div class="textbox">
-  <div class="head"><h1>Greet Application</h1></div>
-  <form action="/home" method="post">
+    <div class="head">
+      <h1>Greet Application</h1>
+    </div>
+    <form action="/home" method="post">
 
-    <br>
-    <br>
-    <br>
-    <div class="button">Name:
-      <input type="text" placeholder="Type name here" size="30"  name="name" value="" required=""></input>
-      <button type="submit" class="btn-danger">Greet</button>
+      <br>
+      <br>
+      <br>
+      <div class="button">Name:
+        <input type="text" placeholder="Type name here" size="30" name="name" value="" required=""></input>
+        <button type="submit" class="btn-danger">Greet</button>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <div class="lang">
+        <input type="radio" name="language" value="Xhosa" required="">IsiXhosa
+        <input type="radio" name="language" value="English" required="">English
+        <input type="radio" name="language" value="French" required="">French
+      </div>
+      <br>
+      <br>
+      <br>
+
+    </form>
+    <div class="msg">
+    <p style="margin-left:150px">{{msg}}</p>
     </div>
     <br>
-    <br>
-    <br>
-
-    <div class="lang">
-    <input type="radio" name="language" value="Xhosa" required="">IsiXhosa
-    <input type="radio" name="language" value="English" required="">English
-    <input type="radio" name="language" value="French" required="">French
-  </div>
-  <br>
-  <br>
-  <br>
-
-  </form>
-  <p style="margin-left:150px">{{msg}}</p>
-  <p style="margin-left:150px">{{count}}</p>
-  <br>
-
 </body>
 </div>
 <div class="last"></div>
 <br>
 <br>
-<div class="hello"><h1>#Hello World!</h1></div>
+<div class="hello">
+  <h1>#Hello World!</h1>
+</div>
