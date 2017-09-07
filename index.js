@@ -55,8 +55,11 @@ app.post("/clear", nameRoutes.clear);
 app.post("/clear", nameRoutes.clear);
 
 var namesGreeted = [];
-var port = process.env.PORT || 5000;
-app.listen(port, function(){
-  console.log("app listening on " + "http://localhost:" + port)
 
-})
+var server = app.listen(3000, function() {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+
+});
