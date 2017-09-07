@@ -1,5 +1,6 @@
 module.exports = function(models) {
   const namesGreeted = [];
+
   const home = function(req, res, done) {
     var name = req.body.name;
     var language = req.body.language;
@@ -49,16 +50,7 @@ module.exports = function(models) {
           if (err) {
             return done(err)
           }
-
-          models.Name.findOne({
-            name: req.body.name
-          }, function(err, result) {
-            if (err) {
-              return done(err)
-            }
-
-
-            console.log('First', result);
+          //   console.log('First', result);
             if (language == "Xhosa") {
               greetMsg = "molo " + " " + result.name.replace().toLowerCase();
             }
@@ -77,7 +69,6 @@ module.exports = function(models) {
               msg: greetMsg,
               counter: greetMsg
             });
-          });
         })
       }
 
