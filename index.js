@@ -29,15 +29,7 @@ app.use(session({
 }));
 
 
- app.get("/", function(req, res) {
-   res.redirect("/home")
 
- })
-
- app.get("/", function(req, res){
-
-   res.redirect("/greeted")
-})
 
 
 
@@ -54,12 +46,10 @@ app.post("/counter/:name", nameRoutes.counter);
 app.post("/clear", nameRoutes.clear);
 app.post("/clear", nameRoutes.clear);
 
-var namesGreeted = [];
+
 
 var port = process.env.PORT|| 3000;
 app.listen(port, function() {
-  // var host = server.address().address;
-  // var port = server.address().port;
 
   console.log('Example app listening at http://%s:%s, ' + port);
 

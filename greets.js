@@ -1,5 +1,5 @@
 module.exports = function(models) {
-  const namesGreeted = [];
+
 
   const home = function(req, res, done) {
     var name = req.body.name;
@@ -15,7 +15,22 @@ module.exports = function(models) {
         //increment
         result.counter = result.counter + 1;
 
+        result.save(function(err, results) {models.Name.findOne({
+      name: req.body.name
+    }, function(err, result) {
+      if (err) {
+        return done(err)
+      }
+      if (result) {
+        //increment
+        result.counter = result.counter + 1;
+
         result.save(function(err, results) {
+          if (err) {
+            return done(err)
+          }
+
+        })
           if (err) {
             return done(err)
           }
