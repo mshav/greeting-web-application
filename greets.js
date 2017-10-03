@@ -1,13 +1,13 @@
 module.exports = function(models) {
 
 
-  // const home = function(req, res, done) {
-  //   var name = req.body.name;
-  //   var language = req.body.language;
-  //   var greetMsg = '';
-  //   models.Name.findOne({
-  //     name: req.body.name
-  //   }, function(err, result) {
+  const home = function(req, res, done) {
+    var name = req.body.name;
+    var language = req.body.language;
+    var greetMsg = '';
+    models.Name.findOne({
+      name: req.body.name
+    }, function(err, result) {
       if (err) {
         return done(err)
       }
