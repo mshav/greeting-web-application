@@ -15,7 +15,8 @@ module.exports = function(models) {
         //increment
         result.counter = result.counter + 1;
 
-        result.save(function(err, results) {models.Name.findOne({
+        result.save(function(err, results) {
+          models.Name.findOne({
       name: req.body.name
     }, function(err, result) {
       if (err) {
@@ -35,7 +36,7 @@ module.exports = function(models) {
             return done(err)
           }
 
-        })
+        }
 
 
         if (language == "Xhosa") {
@@ -55,7 +56,7 @@ module.exports = function(models) {
         res.render('home', {
           msg: greetMsg
         });
-      }
+      })
 
       if (!result) {
         models.Name.create({
@@ -89,6 +90,11 @@ module.exports = function(models) {
 
     })
   }
+})
+}
+
+
+
 
   const counter = function(req, res, next) {
     models.Name.findOne({
@@ -104,6 +110,10 @@ module.exports = function(models) {
     })
   }
 
+
+
+
+
   const greeted = function(req, res, next) {
     models.Name.find({}, function(err, results) {
       if (err) {
@@ -115,6 +125,10 @@ module.exports = function(models) {
     })
   }
 
+
+
+
+
   const clear = function(req, res, next) {
     models.Name.remove({},
       function(err) {
@@ -124,6 +138,8 @@ module.exports = function(models) {
         res.render("greeted")
       })
   }
+
+
 
   return {
     home,

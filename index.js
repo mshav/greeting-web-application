@@ -7,7 +7,7 @@ const Models = require('./models');
 const mongoUrl = process.env.MONGO_DB_URL || 'mongodb://localhost/greetings';
 const models = Models(mongoUrl);
 const nameRoutes = NameRoutes(models);
-
+console.log('fshrhtrtrhdrtry', nameRoutes);
 
 var app = express();
 app.use(express.static('public'))
@@ -34,7 +34,7 @@ app.use(session({
 
 
 
-app.get("/home", nameRoutes.home);
+app.get('/home', nameRoutes.home);
 app.post('/home', nameRoutes.home);
 
   app.get("/greeted", nameRoutes.greeted);
